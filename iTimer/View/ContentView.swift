@@ -14,14 +14,12 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("Time Remaining: \(Int(timer.timeRemaining))")
+            Text("\(timer.timeRemainingFormatted)")
                 .timerStyle()
             
-            Text("Intervals Elapsed: \(timer.intervalsElapsed)")
+            Text("Intervals: \(timer.intervalsElapsed / timer.intervalsRemaining)")
                 .timerStyle()
-            
-            Text("Intervals Remaining: \(timer.intervalsRemaining)")
-                .timerStyle()
+
         }
         .padding()
     }

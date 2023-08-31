@@ -18,6 +18,14 @@ class IntervalTimer: ObservableObject {
     @Published var intervalsRemaining: Int
     @Published var totalIntervals: Int
     
+    var timeRemainingFormatted: String {
+        let hours = Int(timeRemaining) / 3600
+        let minutes = (Int(timeRemaining) % 3600) / 60
+        let seconds = Int(timeRemaining) % 60
+        
+        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+    }
+    
     private var timer: Timer?
     private let intervalDuration: TimeInterval
 
