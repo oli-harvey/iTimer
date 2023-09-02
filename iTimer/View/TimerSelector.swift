@@ -7,7 +7,8 @@ struct TimerSelectorView: View {
     var body: some View {
         NavigationView{
             VStack {
-                Text("Select a timer matey")
+                Text("Select a timer")
+                    .padding()
                 Button("New Timer") {
                     print("new tapped")
                 }
@@ -18,9 +19,10 @@ struct TimerSelectorView: View {
                         tag: timer,
                         selection: $selectedTimerConfig
                     ) {
-                        Text("\(timer.intervalDuration)")
+                        timer.display2
                     }
-                    .buttonStyle(PlainButtonStyle())
+                    .buttonBorderShape(.capsule)
+                    .buttonStyle(.borderedProminent)
                     .onTapGesture {
                         selectedTimerConfig = timer
                     }
