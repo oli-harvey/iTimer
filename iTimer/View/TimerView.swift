@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ContentView: View {
-    @ObservedObject var timer = IntervalTimer(intervalDuration: 60.0, totalIntervals: 5)
+struct TimerView: View {
+    @ObservedObject var timer: IntervalTimer
         
                               
     
@@ -17,7 +17,7 @@ struct ContentView: View {
             Text("\(timer.timeRemainingFormatted)")
                 .timerStyle()
             
-            Text("Intervals: \(timer.intervalsElapsed / timer.intervalsRemaining)")
+            Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
                 .timerStyle()
 
         }
@@ -25,8 +25,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        TimerView(timer: IntervalTimer(intervalDuration: 120, totalIntervals: 4))
     }
 }

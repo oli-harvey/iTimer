@@ -11,7 +11,7 @@ import SwiftUI
 struct iTimerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TimerSelectorView()
         }
     }
 }
