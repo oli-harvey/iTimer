@@ -7,7 +7,7 @@ struct TimerTextStyle: ViewModifier {
             .foregroundColor(.white)
             .padding(.horizontal, 20)
             .padding(.vertical, 5)
-            .background(Color.black.opacity(0.75))
+            .background(Color("darkGrey"))
             .clipShape(Capsule())
     }
 }

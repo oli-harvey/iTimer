@@ -27,7 +27,9 @@ struct TimerConfig: Codable, Identifiable, Hashable {
         return HStack {
             VStack {
                 Image(systemName: "timer.circle")
+                    .foregroundColor(.orange)
                 Image(systemName: "arrow.counterclockwise.circle")
+                    .foregroundColor(.orange)
             }
             VStack(alignment: .leading) {
                 Text(formattedTime)

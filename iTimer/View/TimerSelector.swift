@@ -13,6 +13,7 @@ struct TimerSelectorView: View {
                 Button(action: {isAddTimerPopoverPresented.toggle()}) {
                     HStack {
                         Image(systemName: "timer.circle")
+                            .foregroundColor(.orange)
                         Text("New iTimer")
                     }
                 }
