@@ -2,31 +2,47 @@ import SwiftUI
 
 struct TimerSelectorView: View {
     @EnvironmentObject var timerConfigStorage: TimerConfigStorage
-    @State private var selectedTimerConfig: TimerConfig?
     @State private var isAddTimerPopoverPresented: Bool = false
-    @State private var isTimerViewPresented = false
+    
+    private let buttonWidth = UIScreen.main.bounds.width * 0.7
+    private let buttonHeight = UIScreen.main.bounds.width * 0.7 * 0.3
         
     var body: some View {
         NavigationView{
             VStack {
-                Button("New Timer") {
-                    isAddTimerPopoverPresented.toggle()
+                Button(action: {isAddTimerPopoverPresented.toggle()}) {
+                    HStack {
+                        Image(systemName: "timer.circle")
+                        Text("New iTimer")
+                    }
                 }
+                .frame(width: buttonWidth, height: buttonHeight)
                 .timerStyle()
                 .popover(isPresented: $isAddTimerPopoverPresented) {
                     AddTimerView(isPresented: $isAddTimerPopoverPresented)
                 }
                 ScrollView {
                     ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
-                        Button(action: {
-                            selectedTimerConfig = timerConfig
-                            isTimerViewPresented = true // Show the TimerView
-                        }) {
-                            Text(timerConfig.display)
-                        }
-                        .timerStyle()
+                        TimerListCell(timerConfig: timerConfig, buttonWidth: buttonWidth, buttonHeight: buttonHeight)
                     }
                 }
+//                ScrollView {
+//                    ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
+//                        NavigationLink(
+//                            destination: TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals)),
+//                            isActive: $isTimerViewActive
+//                        ) {
+//                            Button(action: {
+//                                isTimerViewActive = true
+////                                selectedTimerConfig = timerConfig
+//                            }) {
+//                                timerConfig.display
+//                            }
+//                            .frame(width: buttonWidth, height: buttonHeight)
+//                            .timerStyle()
+//                        }
+//                    }
+//                }
                 
             } 
             .padding()
@@ -35,11 +51,11 @@ struct TimerSelectorView: View {
                     .opacity(0)
             )
             .navigationTitle("Interval Timers")
-            .sheet(item: $selectedTimerConfig) { timerConfig in
-                NavigationView {
-                    TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals))
-                }
-            }
+//            .sheet(item: $selectedTimerConfig) { timerConfig in
+//                NavigationView {
+//                    TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals))
+//                }
+//            }
         }
     }
 }

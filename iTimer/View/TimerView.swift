@@ -9,8 +9,6 @@ import SwiftUI
 
 struct TimerView: View {
     @ObservedObject var timer: IntervalTimer
-        
-                              
     
     var body: some View {
         VStack {
@@ -25,8 +23,8 @@ struct TimerView: View {
     }
 }
 
-struct TimerView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerView(timer: IntervalTimer(intervalDuration: 120, totalIntervals: 4))
-    }
-}
+//struct TimerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimerView(timerConfig: TimerConfig(intervalDuration: 3, totalIntervals: 2))
+//    }
+//}

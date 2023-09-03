@@ -3,25 +3,16 @@ import SwiftUI
 struct TimerConfig: Codable, Identifiable, Hashable {
     let intervalDuration: TimeInterval
     let totalIntervals: Int
+    var id = UUID()
     
-    var id: String {
-        "\(intervalDuration)-\(totalIntervals)"
-    }
+//    var id: String {
+//        "\(intervalDuration)-\(totalIntervals)"
+//    }
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
     
-    var display: String {
-        let hours = Int(intervalDuration) / 3600
-        let minutes = (Int(intervalDuration) % 3600) / 60
-        let seconds = Int(intervalDuration) % 60
-        
-        let formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        
-        return "\(formattedTime)\nTotal Intervals: \(totalIntervals)"
-    }
-    
-    var display2: some View {
+    var display: some View {
         let hours = Int(intervalDuration) / 3600
         let minutes = (Int(intervalDuration) % 3600) / 60
         let seconds = Int(intervalDuration) % 60
