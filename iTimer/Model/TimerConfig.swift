@@ -40,7 +40,7 @@ struct TimerConfig: Codable, Identifiable, Hashable {
             }
             VStack(alignment: .leading) {
                 Text(formattedTime)
-                Text("\(totalIntervals)")
+                Text("x\(totalIntervals)")
             }
         }
     }

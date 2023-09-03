@@ -16,6 +16,8 @@
 		C96319AD2AA1D8EE007C653E /* TimerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AC2AA1D8EE007C653E /* TimerSelector.swift */; };
 		C96319AF2AA1DFA8007C653E /* StructArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */; };
 		C96319B12AA1DFDE007C653E /* TimerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B02AA1DFDE007C653E /* TimerConfig.swift */; };
+		C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
+		C96319B52AA3B594007C653E /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		C96319AC2AA1D8EE007C653E /* TimerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSelector.swift; sourceTree = "<group>"; };
 		C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructArrayStorage.swift; sourceTree = "<group>"; };
 		C96319B02AA1DFDE007C653E /* TimerConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfig.swift; sourceTree = "<group>"; };
+		C96319B22AA3B05E007C653E /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
+		C96319B42AA3B594007C653E /* TimerConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfigStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 			children = (
 				C96319A52A88BB5D007C653E /* Timer.swift */,
 				C96319B02AA1DFDE007C653E /* TimerConfig.swift */,
+				C96319B42AA3B594007C653E /* TimerConfigStorage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 				C96319992A88BB36007C653E /* TimerView.swift */,
 				C96319AA2AA0822A007C653E /* TimerTextStyle.swift */,
 				C96319AC2AA1D8EE007C653E /* TimerSelector.swift */,
+				C96319B22AA3B05E007C653E /* AddTimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,10 +185,12 @@
 				C96319B12AA1DFDE007C653E /* TimerConfig.swift in Sources */,
 				C96319AB2AA0822A007C653E /* TimerTextStyle.swift in Sources */,
 				C96319A62A88BB5D007C653E /* Timer.swift in Sources */,
+				C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */,
 				C963199A2A88BB36007C653E /* TimerView.swift in Sources */,
 				C96319982A88BB36007C653E /* iTimerApp.swift in Sources */,
 				C96319AF2AA1DFA8007C653E /* StructArrayStorage.swift in Sources */,
 				C96319AD2AA1D8EE007C653E /* TimerSelector.swift in Sources */,
+				C96319B52AA3B594007C653E /* TimerConfigStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

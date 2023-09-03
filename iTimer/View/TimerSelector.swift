@@ -1,35 +1,45 @@
 import SwiftUI
 
 struct TimerSelectorView: View {
-    @StructArrayStorage(key: "timers", defaultValue: [TimerConfig(intervalDuration: 120, totalIntervals: 4)]) var timers: [TimerConfig]
+    @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     @State private var selectedTimerConfig: TimerConfig?
+    @State private var isAddTimerPopoverPresented: Bool = false
+    @State private var isTimerViewPresented = false
         
     var body: some View {
         NavigationView{
             VStack {
-                Text("Select a timer")
-                    .padding()
                 Button("New Timer") {
-                    print("new tapped")
+                    isAddTimerPopoverPresented.toggle()
                 }
                 .timerStyle()
-                List(timers, id: \.id) { timer in
-                    NavigationLink(
-                        destination: TimerView(timer: IntervalTimer(intervalDuration: timer.intervalDuration, totalIntervals: timer.totalIntervals)),
-                        tag: timer,
-                        selection: $selectedTimerConfig
-                    ) {
-                        timer.display2
-                    }
-                    .buttonBorderShape(.capsule)
-                    .buttonStyle(.borderedProminent)
-                    .onTapGesture {
-                        selectedTimerConfig = timer
+                .popover(isPresented: $isAddTimerPopoverPresented) {
+                    AddTimerView(isPresented: $isAddTimerPopoverPresented)
+                }
+                ScrollView {
+                    ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
+                        Button(action: {
+                            selectedTimerConfig = timerConfig
+                            isTimerViewPresented = true // Show the TimerView
+                        }) {
+                            Text(timerConfig.display)
+                        }
+                        .timerStyle()
                     }
                 }
                 
-            }
+            } 
             .padding()
+            .background(
+                NavigationLink("", destination: AddTimerView(isPresented: $isAddTimerPopoverPresented), isActive: $isAddTimerPopoverPresented)
+                    .opacity(0)
+            )
+            .navigationTitle("Interval Timers")
+            .sheet(item: $selectedTimerConfig) { timerConfig in
+                NavigationView {
+                    TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals))
+                }
+            }
         }
     }
 }
