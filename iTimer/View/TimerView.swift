@@ -31,7 +31,7 @@ struct TimerView: View {
                     .font(.caption)
                     .foregroundColor(.white)
                 
-                LazyVGrid(columns: [GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize))], spacing: 10) {
+                LazyVGrid(columns: Array(repeating:GridItem(.fixed(dotSize)), count: min(10, timer.totalIntervals)), spacing: 10) {
                     ForEach(0..<timer.totalIntervals, id:\.self) { intervalIndex in
                         Circle()
                             .fill(timer.intervalsElapsed > intervalIndex || isIntervalCompleted  ? Color.orange : Color.gray)

@@ -26,24 +26,8 @@ struct TimerSelectorView: View {
                     ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
                         TimerListCell(timerConfig: timerConfig, buttonWidth: buttonWidth, buttonHeight: buttonHeight)
                     }
+                    
                 }
-//                ScrollView {
-//                    ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
-//                        NavigationLink(
-//                            destination: TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals)),
-//                            isActive: $isTimerViewActive
-//                        ) {
-//                            Button(action: {
-//                                isTimerViewActive = true
-////                                selectedTimerConfig = timerConfig
-//                            }) {
-//                                timerConfig.display
-//                            }
-//                            .frame(width: buttonWidth, height: buttonHeight)
-//                            .timerStyle()
-//                        }
-//                    }
-//                }
                 
             } 
             .padding()
@@ -52,11 +36,6 @@ struct TimerSelectorView: View {
                     .opacity(0)
             )
             .navigationTitle("Interval Timers")
-//            .sheet(item: $selectedTimerConfig) { timerConfig in
-//                NavigationView {
-//                    TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals))
-//                }
-//            }
         }
     }
 }

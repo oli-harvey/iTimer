@@ -8,8 +8,10 @@ class TimerConfigStorage: ObservableObject {
         self.objectWillChange.send()
     }
     
-    
-    
-    // Add any other methods or properties related to timer management here
+    func removeTimer(_ timerConfig: TimerConfig) {
+        timers.removeAll { $0.id == timerConfig.id }
+        self.objectWillChange.send()
+    }
+
 }
 
