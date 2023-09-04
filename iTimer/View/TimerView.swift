@@ -3,20 +3,22 @@ import SwiftUI
 struct TimerView: View {
     @ObservedObject var timer: IntervalTimer
     @State private var isIntervalCompleted = false
+    let dotSize: CGFloat = 10
 
     var body: some View {
         ZStack {
             Circle()
                 .stroke(Color.gray, lineWidth: 10)
-                .scaleEffect(isIntervalCompleted ? 0.3 : 1.0)
+                .scaleEffect(isIntervalCompleted ? 0.8 : 1.0)
+                .animation(.easeInOut(duration:0.3), value: isIntervalCompleted)
 //                .frame(width: 150, height: 150)
 
             Circle()
                 .trim(from: 0.0, to: CGFloat(timer.progress))
                 .stroke(Color.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round))
-                .scaleEffect(isIntervalCompleted ? 0.3 : 1.0)
+                .scaleEffect(isIntervalCompleted ? 0.8 : 1.0)
                 .rotationEffect(.degrees(-90))
-                .animation(.linear(duration: 0.5), value: isIntervalCompleted)
+                .animation(.easeInOut(duration:0.3), value: isIntervalCompleted)
 //                .frame(width: 150, height: 150)
 
             VStack {
@@ -29,11 +31,11 @@ struct TimerView: View {
                     .font(.caption)
                     .foregroundColor(.white)
                 
-                HStack(spacing: 10) {
+                LazyVGrid(columns: [GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize)), GridItem(.fixed(dotSize))], spacing: 10) {
                     ForEach(0..<timer.totalIntervals, id:\.self) { intervalIndex in
                         Circle()
-                            .fill(timer.intervalsElapsed > intervalIndex || isIntervalCompleted ? Color.orange : Color.gray)
-                            .frame(width: 10, height: 10)
+                            .fill(timer.intervalsElapsed > intervalIndex || isIntervalCompleted  ? Color.orange : Color.gray)
+//                            .frame(width: 10, height: 10)
                             .scaleEffect(isIntervalCompleted ? 1.2 : 1.0)
                             .animation(.easeInOut(duration: 0.2), value: isIntervalCompleted)
                             .onReceive(timer.$intervalsElapsed) { _ in
