@@ -1,30 +1,56 @@
-//
-//  ContentView.swift
-//  iTimer
-//
-//  Created by Oliver Harvey on 13/08/2023.
-//
-
 import SwiftUI
 
 struct TimerView: View {
     @ObservedObject var timer: IntervalTimer
-    
-    var body: some View {
-        VStack {
-            Text("\(timer.timeRemainingFormatted)")
-                .timerStyle()
-            
-            Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
-                .timerStyle()
+    @State private var isIntervalCompleted = false
 
+    var body: some View {
+        ZStack {
+            Circle()
+                .stroke(Color.gray, lineWidth: 10)
+                .scaleEffect(isIntervalCompleted ? 0.3 : 1.0)
+//                .frame(width: 150, height: 150)
+
+            Circle()
+                .trim(from: 0.0, to: CGFloat(timer.progress))
+                .stroke(Color.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .scaleEffect(isIntervalCompleted ? 0.3 : 1.0)
+                .rotationEffect(.degrees(-90))
+                .animation(.linear(duration: 0.5), value: isIntervalCompleted)
+//                .frame(width: 150, height: 150)
+
+            VStack {
+                Text("\(timer.timeRemainingFormatted)")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.white)
+
+                Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
+                    .font(.caption)
+                    .foregroundColor(.white)
+                
+                HStack(spacing: 10) {
+                    ForEach(0..<timer.totalIntervals, id:\.self) { intervalIndex in
+                        Circle()
+                            .fill(timer.intervalsElapsed > intervalIndex || isIntervalCompleted ? Color.orange : Color.gray)
+                            .frame(width: 10, height: 10)
+                            .scaleEffect(isIntervalCompleted ? 1.2 : 1.0)
+                            .animation(.easeInOut(duration: 0.2), value: isIntervalCompleted)
+                            .onReceive(timer.$intervalsElapsed) { _ in
+                                // Trigger a flash animation when an interval is completed
+                                withAnimation(.easeInOut(duration: 0.2)) {
+                                    isIntervalCompleted = true
+                                }
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                                    withAnimation(.easeInOut(duration: 0.2)) {
+                                        isIntervalCompleted = false
+                                    }
+                                }
+                            }
+                    }
+                }
+            }
         }
         .padding()
     }
 }
-
-//struct TimerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TimerView(timerConfig: TimerConfig(intervalDuration: 3, totalIntervals: 2))
-//    }
-//}

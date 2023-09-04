@@ -61,8 +61,8 @@ struct TimerSelectorView: View {
     }
 }
 
-struct TimerSelectorView_Previews: PreviewProvider {
-    static var previews: some View {
-        TimerSelectorView()
-    }
-}
+//struct TimerSelectorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TimerSelectorView()
+//    }
+//}

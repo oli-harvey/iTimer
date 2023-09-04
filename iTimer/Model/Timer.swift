@@ -26,6 +26,11 @@ class IntervalTimer: ObservableObject {
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
     
+    var progress: Double {
+        let timeElapsed = intervalDuration - timeRemaining
+        return max(0.0, min(1.0, timeElapsed / intervalDuration))
+    }
+    
     private var timer: Timer?
     private let intervalDuration: TimeInterval
 
