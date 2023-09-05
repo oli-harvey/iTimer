@@ -17,6 +17,7 @@ class IntervalTimer: ObservableObject {
     @Published var intervalsElapsed: Int
     @Published var intervalsRemaining: Int
     @Published var totalIntervals: Int
+    private var updateFreq = 0.01
     
     var timeRemainingFormatted: String {
         let hours = Int(timeRemaining) / 3600
@@ -51,11 +52,11 @@ class IntervalTimer: ObservableObject {
     }
     
     private func startTimer() {
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: updateFreq, repeats: true) { [weak self] timer in
             guard let self = self else { return }
             
-            if self.timeRemaining > 1.0 {
-                self.timeRemaining -= 1.0
+            if self.timeRemaining > updateFreq {
+                self.timeRemaining -= updateFreq
             } else {
                 self.intervalCompleted()
             }
