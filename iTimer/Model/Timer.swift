@@ -17,7 +17,10 @@ class IntervalTimer: ObservableObject {
     @Published var intervalsElapsed: Int
     @Published var intervalsRemaining: Int
     @Published var totalIntervals: Int
+    var isPaused = false
+    var isStopped = true
     private var updateFreq = 0.01
+    private var pausedDate: Date?
     
     var timeRemainingFormatted: String {
         let hours = Int(timeRemaining) / 3600
@@ -51,10 +54,11 @@ class IntervalTimer: ObservableObject {
         stopTimer()
     }
     
-    private func startTimer() {
+    func startTimer() {
+        isStopped = false
         timer = Timer.scheduledTimer(withTimeInterval: updateFreq, repeats: true) { [weak self] timer in
             guard let self = self else { return }
-            
+            guard !isPaused else { return }
             if self.timeRemaining > updateFreq {
                 self.timeRemaining -= updateFreq
             } else {
@@ -63,9 +67,12 @@ class IntervalTimer: ObservableObject {
         }
     }
     
-    private func stopTimer() {
+    func stopTimer() {
         timer?.invalidate()
         timer = nil
+        timeRemaining = intervalDuration
+        intervalsElapsed = 0
+        isStopped = true
     }
     
     private func intervalCompleted() {
@@ -78,4 +85,18 @@ class IntervalTimer: ObservableObject {
             stopTimer()
         }
     }
-}
+    func pause() {
+            timer?.invalidate()
+            pausedDate = Date() // Store the current date when paused
+            isPaused = true
+        }
+
+        func resume() {
+            if isPaused {
+                startTimer()
+                isPaused = false
+            }
+        }
+
+    }
+  
