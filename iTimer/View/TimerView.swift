@@ -29,15 +29,22 @@ struct TimerView: View {
                     Button(action: {
                         timer.isPaused ? timer.resume() : timer.pause()
                     }) {
-                        Image(systemName: "pause.circle")
-                            .resizable()
-                            .frame(width: buttonSize, height: buttonSize)
+                        if timer.isPaused {
+                            Image(systemName: "play.circle")
+                                .resizable()
+                                .frame(width: buttonSize, height: buttonSize)
+                        } else {
+                            Image(systemName: "pause.circle")
+                                .resizable()
+                                .frame(width: buttonSize, height: buttonSize)
+                        }
+ 
                     }
                     .padding()
 
                 }
             }
-            .onAppear {
+            .onAppear() {
                 if timer.isStopped {timer.startTimer()}
             }
 
