@@ -75,6 +75,7 @@ class IntervalTimer: ObservableObject {
         timer = nil
         timeRemaining = intervalDuration
         intervalsElapsed = 0
+        intervalsRemaining = totalIntervals
         isStopped = true
         timerStarted = nil
         totalPausedTime = 0
@@ -83,10 +84,12 @@ class IntervalTimer: ObservableObject {
     private func intervalCompleted() {
         intervalsElapsed += 1
         intervalsRemaining -= 1
+    
         
         if intervalsRemaining > 0 {
             // Adjust the timerStarted by adding the time elapsed
-            timerStarted = timerStarted?.addingTimeInterval(intervalDuration - totalPausedTime)
+            timerStarted = Date()
+            totalPausedTime = 0
             timeRemaining = intervalDuration
         } else {
             stopTimer()
