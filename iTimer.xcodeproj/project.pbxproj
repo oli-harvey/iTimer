@@ -19,8 +19,50 @@
 		C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
 		C96319B52AA3B594007C653E /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
 		C96319BB2AA48CE5007C653E /* TimerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319BA2AA48CE5007C653E /* TimerListCell.swift */; };
+		C9CC20BC2AACFA2A001C4CF5 /* iTimer Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C9CC20C52AACFA2F001C4CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */; };
+		C9CC20C82AACFA2F001C4CF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C72AACFA2F001C4CF5 /* Preview Assets.xcassets */; };
+		C9CC20D02AACFB24001C4CF5 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319992A88BB36007C653E /* TimerView.swift */; };
+		C9CC20D12AACFB24001C4CF5 /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319972A88BB36007C653E /* iTimerApp.swift */; };
+		C9CC20D22AACFB24001C4CF5 /* StructArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */; };
+		C9CC20D32AACFB24001C4CF5 /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
+		C9CC20D42AACFB24001C4CF5 /* TimerTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AA2AA0822A007C653E /* TimerTextStyle.swift */; };
+		C9CC20D52AACFB24001C4CF5 /* TimerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319BA2AA48CE5007C653E /* TimerListCell.swift */; };
+		C9CC20D62AACFB24001C4CF5 /* TimerCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */; };
+		C9CC20D72AACFB24001C4CF5 /* TimerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AC2AA1D8EE007C653E /* TimerSelector.swift */; };
+		C9CC20D82AACFB24001C4CF5 /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
+		C9CC20D92AACFB24001C4CF5 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319A52A88BB5D007C653E /* Timer.swift */; };
+		C9CC20DA2AACFB24001C4CF5 /* TimerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B02AA1DFDE007C653E /* TimerConfig.swift */; };
+		C9CC20DC2AACFC4A001C4CF5 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */; };
+		C9CC20DD2AACFC58001C4CF5 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */; };
+		C9CC21042AAD0E2E001C4CF5 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC21032AAD0E2E001C4CF5 /* Platform.swift */; };
+		C9CC21052AAD0E2E001C4CF5 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC21032AAD0E2E001C4CF5 /* Platform.swift */; };
 		C9F3478A2AAC96190014F9D1 /* TimerCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9CC20BD2AACFA2A001C4CF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C963198C2A88BB36007C653E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C9CC20BA2AACFA2A001C4CF5;
+			remoteInfo = "iTimer Watch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9CC20CB2AACFA2F001C4CF5 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C9CC20BC2AACFA2A001C4CF5 /* iTimer Watch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C96319942A88BB36007C653E /* iTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -36,11 +78,25 @@
 		C96319B22AA3B05E007C653E /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
 		C96319B42AA3B594007C653E /* TimerConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfigStorage.swift; sourceTree = "<group>"; };
 		C96319BA2AA48CE5007C653E /* TimerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListCell.swift; sourceTree = "<group>"; };
+		C9CC20B62AACFA2A001C4CF5 /* iTimer Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C9CC20C72AACFA2F001C4CF5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenSize.swift; sourceTree = "<group>"; };
+		C9CC21022AAD0E2D001C4CF5 /* iTimer Watch-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTimer Watch-Bridging-Header.h"; sourceTree = "<group>"; };
+		C9CC21032AAD0E2E001C4CF5 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
 		C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCellDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		C96319912A88BB36007C653E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CC20B82AACFA2A001C4CF5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				C96319962A88BB36007C653E /* iTimer */,
+				C9CC20BF2AACFA2A001C4CF5 /* iTimer Watch Watch App */,
 				C96319952A88BB36007C653E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				C96319942A88BB36007C653E /* iTimer.app */,
+				C9CC20B62AACFA2A001C4CF5 /* iTimer Watch.app */,
+				C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,6 +151,7 @@
 				C96319A52A88BB5D007C653E /* Timer.swift */,
 				C96319B02AA1DFDE007C653E /* TimerConfig.swift */,
 				C96319B42AA3B594007C653E /* TimerConfigStorage.swift */,
+				C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -114,8 +174,27 @@
 			children = (
 				C96319972A88BB36007C653E /* iTimerApp.swift */,
 				C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */,
+				C9CC21032AAD0E2E001C4CF5 /* Platform.swift */,
+				C9CC21022AAD0E2D001C4CF5 /* iTimer Watch-Bridging-Header.h */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C9CC20BF2AACFA2A001C4CF5 /* iTimer Watch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */,
+				C9CC20C62AACFA2F001C4CF5 /* Preview Content */,
+			);
+			path = "iTimer Watch Watch App";
+			sourceTree = "<group>";
+		};
+		C9CC20C62AACFA2F001C4CF5 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C9CC20C72AACFA2F001C4CF5 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +217,40 @@
 			productReference = C96319942A88BB36007C653E /* iTimer.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C9CC20B52AACFA2A001C4CF5 /* iTimer Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9CC20CF2AACFA2F001C4CF5 /* Build configuration list for PBXNativeTarget "iTimer Watch" */;
+			buildPhases = (
+				C9CC20B42AACFA2A001C4CF5 /* Resources */,
+				C9CC20CB2AACFA2F001C4CF5 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9CC20BE2AACFA2A001C4CF5 /* PBXTargetDependency */,
+			);
+			name = "iTimer Watch";
+			productName = "iTimer Watch";
+			productReference = C9CC20B62AACFA2A001C4CF5 /* iTimer Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		C9CC20BA2AACFA2A001C4CF5 /* iTimer Watch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9CC20CE2AACFA2F001C4CF5 /* Build configuration list for PBXNativeTarget "iTimer Watch Watch App" */;
+			buildPhases = (
+				C9CC20B72AACFA2A001C4CF5 /* Sources */,
+				C9CC20B82AACFA2A001C4CF5 /* Frameworks */,
+				C9CC20B92AACFA2A001C4CF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "iTimer Watch Watch App";
+			productName = "iTimer Watch Watch App";
+			productReference = C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -149,6 +262,13 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					C96319932A88BB36007C653E = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					C9CC20B52AACFA2A001C4CF5 = {
+						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
+					};
+					C9CC20BA2AACFA2A001C4CF5 = {
 						CreatedOnToolsVersion = 14.3.1;
 					};
 				};
@@ -167,6 +287,8 @@
 			projectRoot = "";
 			targets = (
 				C96319932A88BB36007C653E /* iTimer */,
+				C9CC20B52AACFA2A001C4CF5 /* iTimer Watch */,
+				C9CC20BA2AACFA2A001C4CF5 /* iTimer Watch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -181,6 +303,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9CC20B42AACFA2A001C4CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9CC20B92AACFA2A001C4CF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CC20C82AACFA2F001C4CF5 /* Preview Assets.xcassets in Resources */,
+				C9CC20C52AACFA2F001C4CF5 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -191,9 +329,11 @@
 				C96319B12AA1DFDE007C653E /* TimerConfig.swift in Sources */,
 				C96319AB2AA0822A007C653E /* TimerTextStyle.swift in Sources */,
 				C96319A62A88BB5D007C653E /* Timer.swift in Sources */,
+				C9CC21042AAD0E2E001C4CF5 /* Platform.swift in Sources */,
 				C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */,
 				C963199A2A88BB36007C653E /* TimerView.swift in Sources */,
 				C96319982A88BB36007C653E /* iTimerApp.swift in Sources */,
+				C9CC20DC2AACFC4A001C4CF5 /* ScreenSize.swift in Sources */,
 				C9F3478A2AAC96190014F9D1 /* TimerCellDetail.swift in Sources */,
 				C96319AF2AA1DFA8007C653E /* StructArrayStorage.swift in Sources */,
 				C96319BB2AA48CE5007C653E /* TimerListCell.swift in Sources */,
@@ -202,7 +342,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C9CC20B72AACFA2A001C4CF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9CC20D02AACFB24001C4CF5 /* TimerView.swift in Sources */,
+				C9CC20D22AACFB24001C4CF5 /* StructArrayStorage.swift in Sources */,
+				C9CC20D12AACFB24001C4CF5 /* iTimerApp.swift in Sources */,
+				C9CC21052AAD0E2E001C4CF5 /* Platform.swift in Sources */,
+				C9CC20D92AACFB24001C4CF5 /* Timer.swift in Sources */,
+				C9CC20D52AACFB24001C4CF5 /* TimerListCell.swift in Sources */,
+				C9CC20D72AACFB24001C4CF5 /* TimerSelector.swift in Sources */,
+				C9CC20DD2AACFC58001C4CF5 /* ScreenSize.swift in Sources */,
+				C9CC20D82AACFB24001C4CF5 /* TimerConfigStorage.swift in Sources */,
+				C9CC20D32AACFB24001C4CF5 /* AddTimerView.swift in Sources */,
+				C9CC20DA2AACFB24001C4CF5 /* TimerConfig.swift in Sources */,
+				C9CC20D42AACFB24001C4CF5 /* TimerTextStyle.swift in Sources */,
+				C9CC20D62AACFB24001C4CF5 /* TimerCellDetail.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9CC20BE2AACFA2A001C4CF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C9CC20BA2AACFA2A001C4CF5 /* iTimer Watch Watch App */;
+			targetProxy = C9CC20BD2AACFA2A001C4CF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C96319A02A88BB39007C653E /* Debug */ = {
@@ -324,10 +492,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = KQFV358W5W;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -342,6 +512,8 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oli.harvey.iTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = watch;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -353,10 +525,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"iTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = KQFV358W5W;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -371,9 +545,122 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = oli.harvey.iTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = watch;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C9CC20C92AACFA2F001C4CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "oli.harvey.iTimer-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = watch;
+				SWIFT_OBJC_BRIDGING_HEADER = "iTimer/Controller/iTimer Watch-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C9CC20CA2AACFA2F001C4CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "oli.harvey.iTimer-Watch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = watch;
+				SWIFT_OBJC_BRIDGING_HEADER = "iTimer/Controller/iTimer Watch-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C9CC20CC2AACFA2F001C4CF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iTimer Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=watchos*]" = KQFV358W5W;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "oli.harvey.iTimer-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
+			};
+			name = Debug;
+		};
+		C9CC20CD2AACFA2F001C4CF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iTimer Watch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=watchos*]" = KQFV358W5W;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKWatchOnly = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "oli.harvey.iTimer-Watch.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=watchos*]" = watch;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 9.4;
 			};
 			name = Release;
 		};
@@ -394,6 +681,24 @@
 			buildConfigurations = (
 				C96319A32A88BB39007C653E /* Debug */,
 				C96319A42A88BB39007C653E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9CC20CE2AACFA2F001C4CF5 /* Build configuration list for PBXNativeTarget "iTimer Watch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CC20CC2AACFA2F001C4CF5 /* Debug */,
+				C9CC20CD2AACFA2F001C4CF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9CC20CF2AACFA2F001C4CF5 /* Build configuration list for PBXNativeTarget "iTimer Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9CC20C92AACFA2F001C4CF5 /* Debug */,
+				C9CC20CA2AACFA2F001C4CF5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

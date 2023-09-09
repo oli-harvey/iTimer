@@ -3,7 +3,7 @@ import SwiftUI
 struct TimerTextStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .font(.largeTitle)
+            .font(.system(size: Platform.textFontSize))
             .foregroundColor(.white)
             .padding(.horizontal, 20)
             .padding(.vertical, 5)

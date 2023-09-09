@@ -7,7 +7,7 @@ struct TimerView: View {
     @State private var isIntervalCompleted = false
     @Environment(\.presentationMode) var presentationMode
     let dotSize: CGFloat = 10
-    private let buttonSize = UIScreen.main.bounds.width * 0.1
+    private let buttonSize = ScreenSize.deviceWidth * 0.1
 
     var body: some View {
         ZStack {
@@ -100,13 +100,14 @@ struct TimerNumericalView: View {
                     .foregroundColor(.white)
             }
             Text("\(timer.timeRemainingFormatted)")
-                .font(.title)
+                .font(.system(size: Platform.textFontSize))
                 .bold()
                 .foregroundColor(.white)
 
             Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
                 .font(.caption)
                 .foregroundColor(.white)
+                .font(.system(size: Platform.textFontSize))
         }
     }
 }

@@ -36,10 +36,14 @@ struct TimerCellDetail: View {
             VStack(alignment: .leading) {
                 if timer.isStopped {
                     Text(formatTime())
+                        .font(.system(size: Platform.textFontSize))
                     Text("x\(timerConfig.totalIntervals)")
+                        .font(.system(size: Platform.textFontSize))
                 } else {
                     Text(timer.timeRemainingFormatted)
+                        .font(.system(size: Platform.textFontSize))
                     Text("\(timer.intervalsElapsed) / \(timer.totalIntervals)")
+                        .font(.system(size: Platform.textFontSize))
                 }
 
             }

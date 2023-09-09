@@ -4,8 +4,8 @@ struct TimerSelectorView: View {
     @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     @State private var isAddTimerPopoverPresented: Bool = false
     
-    private let buttonWidth = UIScreen.main.bounds.width * 0.7
-    private let buttonHeight = UIScreen.main.bounds.width * 0.7 * 0.3
+    private let buttonWidth = ScreenSize.deviceWidth * 0.7
+    private let buttonHeight = ScreenSize.deviceWidth * 0.7 * 0.3
         
     var body: some View {
         NavigationView{
@@ -15,11 +15,12 @@ struct TimerSelectorView: View {
                         Image(systemName: "timer.circle")
                             .foregroundColor(.orange)
                         Text("New iTimer")
+                            .font(.system(size: Platform.textFontSize))
                     }
                 }
                 .frame(width: buttonWidth, height: buttonHeight)
                 .timerStyle()
-                .popover(isPresented: $isAddTimerPopoverPresented) {
+                .sheet(isPresented: $isAddTimerPopoverPresented) {
                     AddTimerView(isPresented: $isAddTimerPopoverPresented)
                 }
                 ScrollView {
@@ -31,10 +32,10 @@ struct TimerSelectorView: View {
                 
             } 
             .padding()
-            .background(
-                NavigationLink("", destination: AddTimerView(isPresented: $isAddTimerPopoverPresented), isActive: $isAddTimerPopoverPresented)
-                    .opacity(0)
-            )
+//            .background(
+//                NavigationLink("", destination: AddTimerView(isPresented: $isAddTimerPopoverPresented), isActive: $isAddTimerPopoverPresented)
+//                    .opacity(0)
+//            )
             .navigationTitle("Interval Timers")
         }
     }

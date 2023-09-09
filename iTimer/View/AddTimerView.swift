@@ -15,6 +15,7 @@ struct AddTimerView: View {
                     HStack {
                         VStack {
                             Text("Hours")
+                                .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $hours) {
                                 ForEach(0..<24, id: \.self) { hour in
                                     Text("\(hour)").tag(hour)
@@ -25,6 +26,7 @@ struct AddTimerView: View {
                         .labelsHidden() // Hide the default label
                         VStack {
                             Text("Minutes")
+                                .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $minutes) {
                                 ForEach(0..<60, id: \.self) { minute in
                                     Text("\(minute)").tag(minute)
@@ -35,6 +37,7 @@ struct AddTimerView: View {
                         .labelsHidden() // Hide the default label
                         VStack {
                             Text("Seconds")
+                                .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $seconds) {
                                 ForEach(0..<60, id: \.self) { second in
                                     Text("\(second)").tag(second)
@@ -53,22 +56,41 @@ struct AddTimerView: View {
                     }
                     .pickerStyle(.wheel)
                 }
+                Section() {
+                    VStack {
+                        HStack {
+                            Button("Cancel") {
+                                isPresented = false
+                            }
+                            Spacer()
+                            Button("Save") {
+                                // Calculate the total interval duration in seconds
+                                let intervalDuration = TimeInterval(hours * 3600 + minutes * 60 + seconds)
+                                
+                                // Validate input and add the new TimerConfig to the array
+                                let newTimerConfig = TimerConfig(intervalDuration: intervalDuration, totalIntervals: totalIntervals)
+                                timerConfigStorage.addTimer(newTimerConfig)
+                                isPresented = false
+                            }
+                        }
+                    }
+                }
             }
             .navigationBarTitle("Add Timer")
-            .navigationBarItems(
-                leading: Button("Cancel") {
-                    isPresented = false
-                },
-                trailing: Button("Save") {
-                    // Calculate the total interval duration in seconds
-                    let intervalDuration = TimeInterval(hours * 3600 + minutes * 60 + seconds)
-                    
-                    // Validate input and add the new TimerConfig to the array
-                    let newTimerConfig = TimerConfig(intervalDuration: intervalDuration, totalIntervals: totalIntervals)
-                    timerConfigStorage.addTimer(newTimerConfig)
-                    isPresented = false
-                }
-            )
+//            .navigationBarItems(
+//                leading: Button("Cancel") {
+//                    isPresented = false
+//                },
+//                trailing: Button("Save") {
+//                    // Calculate the total interval duration in seconds
+//                    let intervalDuration = TimeInterval(hours * 3600 + minutes * 60 + seconds)
+//
+//                    // Validate input and add the new TimerConfig to the array
+//                    let newTimerConfig = TimerConfig(intervalDuration: intervalDuration, totalIntervals: totalIntervals)
+//                    timerConfigStorage.addTimer(newTimerConfig)
+//                    isPresented = false
+//                }
+//            )
         }
     }
 }
