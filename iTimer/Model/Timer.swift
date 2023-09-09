@@ -23,10 +23,11 @@ class IntervalTimer: ObservableObject {
         let hours = Int(timeRemaining) / 3600
         let minutes = (Int(timeRemaining) % 3600) / 60
         let seconds = Int(timeRemaining) % 60
+        let milliseconds = Int((timeRemaining.truncatingRemainder(dividingBy: 1)) * 1000)
         var formattedTime = ""
         
         if hours == 0 {
-            formattedTime = String(format: "%02d:%02d", minutes, seconds)
+            formattedTime = String(format: "%02d:%02d:%03d", minutes, seconds, milliseconds)
         } else {
             formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         }
