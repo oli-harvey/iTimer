@@ -59,12 +59,13 @@ class IntervalTimer: ObservableObject {
                     // Calculate elapsed time excluding paused periods
                     let currentTime = Date()
                     let elapsedTime = currentTime.timeIntervalSince(started) - self.totalPausedTime
+                    let intervalsCompleted = Int(floor(elapsedTime / self.intervalDuration))
                     let remainingTime = max(0, self.intervalDuration - elapsedTime)
                     self.timeRemaining = remainingTime
                     
-                    if remainingTime <= 0 {
-                        self.intervalCompleted()
-                    }
+                    for _ in 0..<intervalsCompleted {
+                           self.intervalCompleted()
+                       }
                 }
             }
     }
