@@ -19,24 +19,35 @@ struct TimerView: View {
                 HStack {
                     Button(action: {
                         timer.stopTimer()
+                        timer.resetTimer()
                         presentationMode.wrappedValue.dismiss()
                     }) {
                         Image(systemName: "xmark.circle")
                             .resizable()
                             .frame(width: buttonSize, height: buttonSize)
+                            .foregroundColor(.orange)
                     }
                     Spacer()
                     Button(action: {
-                        timer.isPaused ? timer.resume() : timer.pause()
+                        if timer.isCompleted {
+                            timer.resetTimer()
+                            timer.startTimer()
+                        } else if timer.isPaused {
+                            timer.resume()
+                        } else {
+                            timer.pause()
+                        }
                     }) {
-                        if timer.isPaused {
+                        if timer.isPaused || timer.isCompleted {
                             Image(systemName: "play.circle")
                                 .resizable()
                                 .frame(width: buttonSize, height: buttonSize)
+                                .foregroundColor(.orange)
                         } else {
                             Image(systemName: "pause.circle")
                                 .resizable()
                                 .frame(width: buttonSize, height: buttonSize)
+                                .foregroundColor(.orange)
                         }
  
                     }
@@ -80,6 +91,11 @@ struct TimerNumericalView: View {
 
     var body: some View {
         VStack {
+            if timer.isCompleted {
+                Text("Completed")
+                    .font(.caption)
+                    .foregroundColor(.white)
+            }
             Text("\(timer.timeRemainingFormatted)")
                 .font(.title)
                 .bold()

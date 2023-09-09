@@ -9,6 +9,8 @@ class IntervalTimer: ObservableObject {
     @Published var totalIntervals: Int
     @Published var isPaused = false
     @Published var isStopped = true
+    @Published var isCompleted = false
+    
     private var updateFreq = 0.01
     private var timerStarted: Date? = nil
     private var pausedDate: Date?
@@ -48,6 +50,7 @@ class IntervalTimer: ObservableObject {
     
     func startTimer() {
         isStopped = false
+        isCompleted = false
         if timerStarted == nil {
              timerStarted = Date() // Set the start time only if it's nil
          }
@@ -69,17 +72,19 @@ class IntervalTimer: ObservableObject {
                 }
             }
     }
-
+    func resetTimer() {
+        intervalsElapsed = 0
+        intervalsRemaining = totalIntervals
+        timerStarted = nil
+        totalPausedTime = 0
+        isPaused = false
+    }
     
     func stopTimer() {
         timer?.invalidate()
         timer = nil
-        timeRemaining = intervalDuration
-        intervalsElapsed = 0
-        intervalsRemaining = totalIntervals
         isStopped = true
-        timerStarted = nil
-        totalPausedTime = 0
+        timeRemaining = intervalDuration
     }
     
     private func intervalCompleted() {
@@ -93,6 +98,7 @@ class IntervalTimer: ObservableObject {
             totalPausedTime = 0
             timeRemaining = intervalDuration
         } else {
+            isCompleted = true
             stopTimer()
         }
     }
