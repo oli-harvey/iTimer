@@ -23,8 +23,15 @@ class IntervalTimer: ObservableObject {
         let hours = Int(timeRemaining) / 3600
         let minutes = (Int(timeRemaining) % 3600) / 60
         let seconds = Int(timeRemaining) % 60
+        var formattedTime = ""
         
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        if hours == 0 {
+            formattedTime = String(format: "%02d:%02d", minutes, seconds)
+        } else {
+            formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        }
+        
+        return formattedTime
     }
     
     var progress: Double {
@@ -41,7 +48,6 @@ class IntervalTimer: ObservableObject {
         intervalsElapsed = 0
         intervalsRemaining = totalIntervals
         
-        startTimer()
     }
     
     deinit {
@@ -64,11 +70,14 @@ class IntervalTimer: ObservableObject {
                     let elapsedTime = currentTime.timeIntervalSince(started) - self.totalPausedTime
                     let intervalsCompleted = Int(floor(elapsedTime / self.intervalDuration))
                     let remainingTime = max(0, self.intervalDuration - elapsedTime)
-                    self.timeRemaining = remainingTime
+                    self.timeRemaining = min(remainingTime, intervalDuration)
                     
-                    for _ in 0..<intervalsCompleted {
-                           self.intervalCompleted()
-                       }
+                    if intervalsCompleted > 0 {
+                        for _ in 0..<intervalsCompleted {
+                               self.intervalCompleted()
+                           }
+                    }
+
                 }
             }
     }
@@ -76,8 +85,10 @@ class IntervalTimer: ObservableObject {
         intervalsElapsed = 0
         intervalsRemaining = totalIntervals
         timerStarted = nil
+        timeRemaining = intervalDuration
         totalPausedTime = 0
         isPaused = false
+        isStopped = true
     }
     
     func stopTimer() {

@@ -4,6 +4,7 @@ struct TimerListCell: View {
     @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     @State private var activateNavigationLink: Bool = false
     @State var timerConfig: TimerConfig
+    @ObservedObject var timer: IntervalTimer
     var buttonWidth: CGFloat
     var buttonHeight: CGFloat
     
@@ -16,13 +17,15 @@ struct TimerListCell: View {
         
     var body: some View {
         NavigationLink(
-            destination: TimerView(timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals)),
+            destination: TimerView(timer: timer, timerConfig: timerConfig),
             isActive: $activateNavigationLink
         ) {
             Button(action: {
                 activateNavigationLink = true
             }) {
-                timerConfig.display
+                TimerCellDetail(timerConfig: timerConfig, timer: timer)
+                
+   
             }
             .frame(width: buttonWidth, height: buttonHeight)
             .timerStyle()

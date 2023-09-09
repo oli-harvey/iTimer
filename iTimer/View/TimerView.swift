@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct TimerView: View {
+    @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     @ObservedObject var timer: IntervalTimer
+    var timerConfig: TimerConfig
     @State private var isIntervalCompleted = false
     @Environment(\.presentationMode) var presentationMode
     let dotSize: CGFloat = 10
@@ -38,7 +40,7 @@ struct TimerView: View {
                             timer.pause()
                         }
                     }) {
-                        if timer.isPaused || timer.isCompleted {
+                        if timer.isPaused || timer.isStopped {
                             Image(systemName: "play.circle")
                                 .resizable()
                                 .frame(width: buttonSize, height: buttonSize)
@@ -55,9 +57,10 @@ struct TimerView: View {
 
                 }
             }
-            .onAppear() {
-                if timer.isStopped {timer.startTimer()}
-            }
+//            .onAppear() {
+//                if timer.isStopped {timer.startTimer()}
+//                timerConfigStorage.timerDictionary.updateValue(timer, forKey: timerConfig)
+//            }
 
         }
         .padding()

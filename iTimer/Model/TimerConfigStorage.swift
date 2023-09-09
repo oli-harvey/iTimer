@@ -2,6 +2,7 @@ import SwiftUI
 
 class TimerConfigStorage: ObservableObject {
     @StructArrayStorage(key: "timers", defaultValue: [TimerConfig(intervalDuration: 120, totalIntervals: 4)]) var timers: [TimerConfig]
+//    @Published var timerDictionary: [TimerConfig: IntervalTimer] = [:]
     
     func addTimer(_ timerConfig: TimerConfig) {
         timers.append(timerConfig)

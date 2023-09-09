@@ -24,7 +24,7 @@ struct TimerSelectorView: View {
                 }
                 ScrollView {
                     ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
-                        TimerListCell(timerConfig: timerConfig, buttonWidth: buttonWidth, buttonHeight: buttonHeight)
+                        TimerListCell(timerConfig: timerConfig, timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals), buttonWidth: buttonWidth, buttonHeight: buttonHeight)
                     }
                     
                 }

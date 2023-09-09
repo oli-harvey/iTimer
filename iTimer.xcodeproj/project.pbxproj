@@ -19,6 +19,7 @@
 		C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
 		C96319B52AA3B594007C653E /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
 		C96319BB2AA48CE5007C653E /* TimerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319BA2AA48CE5007C653E /* TimerListCell.swift */; };
+		C9F3478A2AAC96190014F9D1 /* TimerCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		C96319B22AA3B05E007C653E /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
 		C96319B42AA3B594007C653E /* TimerConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfigStorage.swift; sourceTree = "<group>"; };
 		C96319BA2AA48CE5007C653E /* TimerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListCell.swift; sourceTree = "<group>"; };
+		C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerCellDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		C96319A82A88BB77007C653E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */,
 				C96319992A88BB36007C653E /* TimerView.swift */,
 				C96319AA2AA0822A007C653E /* TimerTextStyle.swift */,
 				C96319AC2AA1D8EE007C653E /* TimerSelector.swift */,
@@ -191,6 +194,7 @@
 				C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */,
 				C963199A2A88BB36007C653E /* TimerView.swift in Sources */,
 				C96319982A88BB36007C653E /* iTimerApp.swift in Sources */,
+				C9F3478A2AAC96190014F9D1 /* TimerCellDetail.swift in Sources */,
 				C96319AF2AA1DFA8007C653E /* StructArrayStorage.swift in Sources */,
 				C96319BB2AA48CE5007C653E /* TimerListCell.swift in Sources */,
 				C96319AD2AA1D8EE007C653E /* TimerSelector.swift in Sources */,

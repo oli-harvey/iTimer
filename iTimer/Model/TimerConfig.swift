@@ -11,31 +11,6 @@ struct TimerConfig: Codable, Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
-    
-    var display: some View {
-        let hours = Int(intervalDuration) / 3600
-        let minutes = (Int(intervalDuration) % 3600) / 60
-        let seconds = Int(intervalDuration) % 60
-        var formattedTime = ""
-        
-        if hours == 0 {
-            formattedTime = String(format: "%02d:%02d", minutes, seconds)
-        } else {
-            formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-        }
-            
-        return HStack {
-            VStack {
-                Image(systemName: "timer.circle")
-                    .foregroundColor(.orange)
-                Image(systemName: "arrow.counterclockwise.circle")
-                    .foregroundColor(.orange)
-            }
-            VStack(alignment: .leading) {
-                Text(formattedTime)
-                Text("x\(totalIntervals)")
-            }
-        }
-    }
+
 
 }
