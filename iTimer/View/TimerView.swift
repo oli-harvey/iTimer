@@ -5,6 +5,7 @@ struct TimerView: View {
     @ObservedObject var timer: IntervalTimer
     var timerConfig: TimerConfig
     @State private var isIntervalCompleted = false
+    
     @Environment(\.presentationMode) var presentationMode
     let dotSize: CGFloat = 10
     private let buttonSize = ScreenSize.deviceWidth * 0.1
@@ -29,9 +30,11 @@ struct TimerView: View {
                             .frame(width: buttonSize, height: buttonSize)
                             .foregroundColor(.orange)
                     }
+                    .buttonStyle(.plain)
+                    .padding()
                     Spacer()
                     Button(action: {
-                        if timer.isCompleted {
+                        if timer.isStopped {
                             timer.resetTimer()
                             timer.startTimer()
                         } else if timer.isPaused {
@@ -40,28 +43,18 @@ struct TimerView: View {
                             timer.pause()
                         }
                     }) {
-                        if timer.isPaused || timer.isStopped {
-                            Image(systemName: "play.circle")
-                                .resizable()
-                                .frame(width: buttonSize, height: buttonSize)
-                                .foregroundColor(.orange)
-                        } else {
-                            Image(systemName: "pause.circle")
-                                .resizable()
-                                .frame(width: buttonSize, height: buttonSize)
-                                .foregroundColor(.orange)
-                        }
+                        Image(systemName: timer.isStopped || timer.isPaused ? "play.circle" : "pause.circle")
+                            .resizable()
+                            .frame(width: buttonSize, height: buttonSize)
+                            .foregroundColor(.orange)
  
                     }
+
+                    .buttonStyle(.plain)
                     .padding()
 
                 }
             }
-//            .onAppear() {
-//                if timer.isStopped {timer.startTimer()}
-//                timerConfigStorage.timerDictionary.updateValue(timer, forKey: timerConfig)
-//            }
-
         }
         .padding()
     }
