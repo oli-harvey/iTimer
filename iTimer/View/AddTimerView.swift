@@ -77,20 +77,7 @@ struct AddTimerView: View {
                 }
             }
             .navigationBarTitle("Add Timer")
-//            .navigationBarItems(
-//                leading: Button("Cancel") {
-//                    isPresented = false
-//                },
-//                trailing: Button("Save") {
-//                    // Calculate the total interval duration in seconds
-//                    let intervalDuration = TimeInterval(hours * 3600 + minutes * 60 + seconds)
-//
-//                    // Validate input and add the new TimerConfig to the array
-//                    let newTimerConfig = TimerConfig(intervalDuration: intervalDuration, totalIntervals: totalIntervals)
-//                    timerConfigStorage.addTimer(newTimerConfig)
-//                    isPresented = false
-//                }
-//            )
+
         }
     }
 }

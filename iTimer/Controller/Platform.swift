@@ -23,9 +23,17 @@ enum Platform {
 extension Platform {
     static var textFontSize: CGFloat {
         switch current {
-        case .iOS: return 20
-        case .watchOS: return 10
-        default: return 20
+        case .iOS: return 36
+        case .watchOS: return 18
+        default: return 36
         }
     }
+    static var secondarytTextFontSize: CGFloat {
+        switch current {
+        case .iOS: return 30
+        case .watchOS: return 14
+        default: return 30
+        }
+    }
+    
 }

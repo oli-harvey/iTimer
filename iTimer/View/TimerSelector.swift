@@ -4,12 +4,12 @@ struct TimerSelectorView: View {
     @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     @State private var isAddTimerPopoverPresented: Bool = false
     
-    private let buttonWidth = ScreenSize.deviceWidth * 0.7
-    private let buttonHeight = ScreenSize.deviceWidth * 0.7 * 0.3
+    private let buttonWidth = ScreenSize.deviceWidth * 0.8
+    private let buttonHeight = ScreenSize.deviceWidth * 0.8 * 0.3
         
     var body: some View {
         NavigationView{
-            VStack {
+            ScrollView {
                 Button(action: {isAddTimerPopoverPresented.toggle()}) {
                     HStack {
                         Image(systemName: "timer.circle")
@@ -18,31 +18,21 @@ struct TimerSelectorView: View {
                             .font(.system(size: Platform.textFontSize))
                     }
                 }
+                .buttonStyle(.plain)
                 .frame(width: buttonWidth, height: buttonHeight)
                 .timerStyle()
                 .sheet(isPresented: $isAddTimerPopoverPresented) {
                     AddTimerView(isPresented: $isAddTimerPopoverPresented)
                 }
-                ScrollView {
-                    ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
-                        TimerListCell(timerConfig: timerConfig, timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals), buttonWidth: buttonWidth, buttonHeight: buttonHeight)
-                    }
-                    
+                ForEach(timerConfigStorage.timers, id: \.id) { timerConfig in
+                    TimerListCell(timerConfig: timerConfig, timer: IntervalTimer(intervalDuration: timerConfig.intervalDuration, totalIntervals: timerConfig.totalIntervals), buttonWidth: buttonWidth, buttonHeight: buttonHeight)
+                        .buttonStyle(.plain)
+                        .background(Color.clear)
                 }
-                
             } 
             .padding()
-//            .background(
-//                NavigationLink("", destination: AddTimerView(isPresented: $isAddTimerPopoverPresented), isActive: $isAddTimerPopoverPresented)
-//                    .opacity(0)
-//            )
             .navigationTitle("Interval Timers")
         }
     }
 }
 
-//struct TimerSelectorView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TimerSelectorView()
-//    }
-//}

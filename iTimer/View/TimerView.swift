@@ -105,9 +105,8 @@ struct TimerNumericalView: View {
                 .foregroundColor(.white)
 
             Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
-                .font(.caption)
                 .foregroundColor(.white)
-                .font(.system(size: Platform.textFontSize))
+                .font(.system(size: Platform.secondarytTextFontSize))
         }
     }
 }

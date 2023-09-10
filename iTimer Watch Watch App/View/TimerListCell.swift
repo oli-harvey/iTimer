@@ -25,17 +25,13 @@ struct TimerListCell: View {
             }) {
                 TimerCellDetail(timerConfig: timerConfig, timer: timer)
             }
+            .buttonStyle(.plain)
+
             .frame(width: buttonWidth, height: buttonHeight)
             .timerStyle()
             .gesture(longPressGesture)
-            .contextMenu {
-                Button(action: {
-                    timerConfigStorage.removeTimer(timerConfig)
-                }) {
-                    Text("Remove")
-                }
-            }
-    
+            .background(.clear)
+
         }
     }
 }
