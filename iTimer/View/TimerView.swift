@@ -8,7 +8,7 @@ struct TimerView: View {
     
     @Environment(\.presentationMode) var presentationMode
     let dotSize: CGFloat = 10
-    private let buttonSize = ScreenSize.deviceWidth * 0.1
+    private let buttonSize = ScreenSize.deviceWidth * 0.2
 
     var body: some View {
         ZStack {
@@ -28,10 +28,10 @@ struct TimerView: View {
                         Image(systemName: "xmark.circle")
                             .resizable()
                             .frame(width: buttonSize, height: buttonSize)
-                            .foregroundColor(.orange)
+                            .foregroundColor(.white)
                     }
                     .buttonStyle(.plain)
-                    .padding()
+//                    .padding(.top)
                     Spacer()
                     Button(action: {
                         if timer.isStopped {
@@ -46,12 +46,12 @@ struct TimerView: View {
                         Image(systemName: timer.isStopped || timer.isPaused ? "play.circle" : "pause.circle")
                             .resizable()
                             .frame(width: buttonSize, height: buttonSize)
-                            .foregroundColor(.orange)
+                            .foregroundColor(.white)
  
                     }
 
                     .buttonStyle(.plain)
-                    .padding()
+//                    .padding()
 
                 }
             }
@@ -87,15 +87,22 @@ struct TimerNumericalView: View {
 
     var body: some View {
         VStack {
+            HStack {
+                Text("\(timer.timeRemaining.humanReadable)")
+                    .font(.system(size: Platform.textFontSize))
+                    .bold()
+                    .foregroundColor(.white)
+                Text("/ \(timer.intervalDuration.humanReadable)")
+                    .font(.system(size: Platform.textFontSize))
+                    .foregroundColor(.white)
+            }
+
             if timer.isCompleted {
                 Text("Completed")
                     .font(.caption)
                     .foregroundColor(.white)
             }
-            Text("\(timer.timeRemainingFormatted)")
-                .font(.system(size: Platform.textFontSize))
-                .bold()
-                .foregroundColor(.white)
+
 
             Text("Intervals: \(timer.intervalsElapsed) / \(timer.totalIntervals)")
                 .foregroundColor(.white)
