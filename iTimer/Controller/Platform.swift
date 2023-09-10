@@ -35,5 +35,20 @@ extension Platform {
         default: return 30
         }
     }
+    static var buttonWidth: CGFloat {
+        switch current {
+        case .iOS: return 260
+        case .watchOS: return 130
+        default: return 260
+        }
+    }
+    
+    static var buttonHeight: CGFloat {
+        switch current {
+        case .iOS: return 100
+        case .watchOS: return 50
+        default: return 100
+        }
+    }
     
 }

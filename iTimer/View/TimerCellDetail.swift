@@ -27,6 +27,7 @@ struct TimerCellDetail: View {
     
     var body: some View {
         HStack {
+            Spacer()
             VStack {
                 Image(systemName: "timer.circle")
                     .foregroundColor(.orange)
@@ -47,6 +48,7 @@ struct TimerCellDetail: View {
                 }
 
             }
+            Spacer()
         }
     }
 }

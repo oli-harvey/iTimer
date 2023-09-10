@@ -5,15 +5,17 @@ struct TimerListCell: View {
     @State private var activateNavigationLink: Bool = false
     @State var timerConfig: TimerConfig
     @ObservedObject var timer: IntervalTimer
+    @State var isDeleteConfirmationVisible = false
     var buttonWidth: CGFloat
     var buttonHeight: CGFloat
     
-    var longPressGesture: some Gesture {
-        LongPressGesture(minimumDuration: 1.0)
-            .onEnded { _ in
-                timerConfigStorage.removeTimer(timerConfig)
-            }
-    }
+//    var longPressGesture: some Gesture {
+//        LongPressGesture(minimumDuration: 1.0)
+//            .onEnded { _ in
+//                isDeleteConfirmationVisible = true
+//            }
+//    }
+    
         
     var body: some View {
         NavigationLink(
@@ -29,9 +31,8 @@ struct TimerListCell: View {
 
             .frame(width: buttonWidth, height: buttonHeight)
             .timerStyle()
-            .gesture(longPressGesture)
+//            .gesture(longPressGesture)
             .background(.clear)
-
         }
     }
 }
