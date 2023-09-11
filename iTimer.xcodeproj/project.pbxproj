@@ -14,14 +14,16 @@
 		C90AB63B2AAE332F00A34D03 /* HapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6392AAE32FE00A34D03 /* HapticFeedbackGenerator.swift */; };
 		C90AB63E2AAE35D300A34D03 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90AB63D2AAE35D300A34D03 /* WatchConnectivity.framework */; };
 		C90AB6402AAE364300A34D03 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90AB63F2AAE364200A34D03 /* WatchConnectivity.framework */; };
-		C90AB6422AAE37E200A34D03 /* iosHapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6412AAE37E200A34D03 /* iosHapticFeedbackGenerator.swift */; };
-		C90AB6452AAE381100A34D03 /* watchosHapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6442AAE381100A34D03 /* watchosHapticFeedbackGenerator.swift */; };
+		C90AB6422AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6412AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift */; };
+		C90AB6452AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6442AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift */; };
 		C90AB64A2AAEF6F800A34D03 /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6492AAEF6F800A34D03 /* iTimerApp.swift */; };
+		C90AB6502AAF8C3700A34D03 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB64F2AAF8C3700A34D03 /* IntervalTimer.swift */; };
+		C90AB6522AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6512AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift */; };
 		C96319982A88BB36007C653E /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319972A88BB36007C653E /* iTimerApp.swift */; };
 		C963199A2A88BB36007C653E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319992A88BB36007C653E /* TimerView.swift */; };
 		C963199C2A88BB39007C653E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C963199B2A88BB39007C653E /* Assets.xcassets */; };
 		C963199F2A88BB39007C653E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C963199E2A88BB39007C653E /* Preview Assets.xcassets */; };
-		C96319A62A88BB5D007C653E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319A52A88BB5D007C653E /* Timer.swift */; };
+		C96319A62A88BB5D007C653E /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319A52A88BB5D007C653E /* IntervalTimer.swift */; };
 		C96319AB2AA0822A007C653E /* TimerTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AA2AA0822A007C653E /* TimerTextStyle.swift */; };
 		C96319AD2AA1D8EE007C653E /* TimerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AC2AA1D8EE007C653E /* TimerSelector.swift */; };
 		C96319AF2AA1DFA8007C653E /* StructArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */; };
@@ -39,7 +41,6 @@
 		C9CC20D62AACFB24001C4CF5 /* TimerCellDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F347892AAC96180014F9D1 /* TimerCellDetail.swift */; };
 		C9CC20D72AACFB24001C4CF5 /* TimerSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AC2AA1D8EE007C653E /* TimerSelector.swift */; };
 		C9CC20D82AACFB24001C4CF5 /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
-		C9CC20D92AACFB24001C4CF5 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319A52A88BB5D007C653E /* Timer.swift */; };
 		C9CC20DA2AACFB24001C4CF5 /* TimerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B02AA1DFDE007C653E /* TimerConfig.swift */; };
 		C9CC20DC2AACFC4A001C4CF5 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */; };
 		C9CC20DD2AACFC58001C4CF5 /* ScreenSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */; };
@@ -78,15 +79,18 @@
 		C90AB6392AAE32FE00A34D03 /* HapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		C90AB63D2AAE35D300A34D03 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/WatchOS.platform/Developer/SDKs/WatchOS9.4.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		C90AB63F2AAE364200A34D03 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
-		C90AB6412AAE37E200A34D03 /* iosHapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iosHapticFeedbackGenerator.swift; sourceTree = "<group>"; };
-		C90AB6442AAE381100A34D03 /* watchosHapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = watchosHapticFeedbackGenerator.swift; sourceTree = "<group>"; };
+		C90AB6412AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSHapticFeedbackGenerator.swift; sourceTree = "<group>"; };
+		C90AB6442AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOShapticfeedbackgenerator.swift; sourceTree = "<group>"; };
 		C90AB6492AAEF6F800A34D03 /* iTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimerApp.swift; sourceTree = "<group>"; };
+		C90AB64B2AAF0F1C00A34D03 /* iTimer-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "iTimer-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C90AB64F2AAF8C3700A34D03 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
+		C90AB6512AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedRuntimeSessionDelegate.swift; sourceTree = "<group>"; };
 		C96319942A88BB36007C653E /* iTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96319972A88BB36007C653E /* iTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimerApp.swift; sourceTree = "<group>"; };
 		C96319992A88BB36007C653E /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		C963199B2A88BB39007C653E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C963199E2A88BB39007C653E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C96319A52A88BB5D007C653E /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		C96319A52A88BB5D007C653E /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		C96319AA2AA0822A007C653E /* TimerTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTextStyle.swift; sourceTree = "<group>"; };
 		C96319AC2AA1D8EE007C653E /* TimerSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerSelector.swift; sourceTree = "<group>"; };
 		C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructArrayStorage.swift; sourceTree = "<group>"; };
@@ -144,10 +148,19 @@
 		C90AB6432AAE37F800A34D03 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				C90AB6442AAE381100A34D03 /* watchosHapticFeedbackGenerator.swift */,
+				C90AB6442AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift */,
 				C90AB6492AAEF6F800A34D03 /* iTimerApp.swift */,
+				C90AB6512AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C90AB64E2AAF8C2500A34D03 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C90AB64F2AAF8C3700A34D03 /* IntervalTimer.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		C963198B2A88BB36007C653E = {
@@ -193,7 +206,7 @@
 		C96319A72A88BB65007C653E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C96319A52A88BB5D007C653E /* Timer.swift */,
+				C96319A52A88BB5D007C653E /* IntervalTimer.swift */,
 				C96319B02AA1DFDE007C653E /* TimerConfig.swift */,
 				C96319B42AA3B594007C653E /* TimerConfigStorage.swift */,
 				C9CC20DB2AACFC4A001C4CF5 /* ScreenSize.swift */,
@@ -223,7 +236,7 @@
 				C9CC21032AAD0E2E001C4CF5 /* Platform.swift */,
 				C9CC21022AAD0E2D001C4CF5 /* iTimer Watch-Bridging-Header.h */,
 				C90AB6392AAE32FE00A34D03 /* HapticFeedbackGenerator.swift */,
-				C90AB6412AAE37E200A34D03 /* iosHapticFeedbackGenerator.swift */,
+				C90AB6412AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -231,6 +244,8 @@
 		C9CC20BF2AACFA2A001C4CF5 /* iTimer Watch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				C90AB64E2AAF8C2500A34D03 /* Model */,
+				C90AB64B2AAF0F1C00A34D03 /* iTimer-Watch-Watch-App-Info.plist */,
 				C90AB6432AAE37F800A34D03 /* Controller */,
 				C90AB6312AADBA9800A34D03 /* View */,
 				C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */,
@@ -379,10 +394,10 @@
 				C96319B12AA1DFDE007C653E /* TimerConfig.swift in Sources */,
 				C96319AB2AA0822A007C653E /* TimerTextStyle.swift in Sources */,
 				C90AB63A2AAE32FE00A34D03 /* HapticFeedbackGenerator.swift in Sources */,
-				C96319A62A88BB5D007C653E /* Timer.swift in Sources */,
+				C96319A62A88BB5D007C653E /* IntervalTimer.swift in Sources */,
 				C9CC21042AAD0E2E001C4CF5 /* Platform.swift in Sources */,
 				C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */,
-				C90AB6422AAE37E200A34D03 /* iosHapticFeedbackGenerator.swift in Sources */,
+				C90AB6422AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift in Sources */,
 				C963199A2A88BB36007C653E /* TimerView.swift in Sources */,
 				C96319982A88BB36007C653E /* iTimerApp.swift in Sources */,
 				C9CC20DC2AACFC4A001C4CF5 /* ScreenSize.swift in Sources */,
@@ -403,7 +418,7 @@
 				C9CC20D22AACFB24001C4CF5 /* StructArrayStorage.swift in Sources */,
 				C90AB63B2AAE332F00A34D03 /* HapticFeedbackGenerator.swift in Sources */,
 				C9CC21052AAD0E2E001C4CF5 /* Platform.swift in Sources */,
-				C9CC20D92AACFB24001C4CF5 /* Timer.swift in Sources */,
+				C90AB6522AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift in Sources */,
 				C9CC20D72AACFB24001C4CF5 /* TimerSelector.swift in Sources */,
 				C90AB6332AADBB1000A34D03 /* TimerListCell.swift in Sources */,
 				C9CC20DD2AACFC58001C4CF5 /* ScreenSize.swift in Sources */,
@@ -412,7 +427,8 @@
 				C9CC20DA2AACFB24001C4CF5 /* TimerConfig.swift in Sources */,
 				C90AB64A2AAEF6F800A34D03 /* iTimerApp.swift in Sources */,
 				C9CC20D42AACFB24001C4CF5 /* TimerTextStyle.swift in Sources */,
-				C90AB6452AAE381100A34D03 /* watchosHapticFeedbackGenerator.swift in Sources */,
+				C90AB6502AAF8C3700A34D03 /* IntervalTimer.swift in Sources */,
+				C90AB6452AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift in Sources */,
 				C9CC20D62AACFB24001C4CF5 /* TimerCellDetail.swift in Sources */,
 				C90AB6382AAE304800A34D03 /* extTimeInterval.swift in Sources */,
 			);
@@ -665,6 +681,7 @@
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iTimer-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;
@@ -699,6 +716,7 @@
 				"DEVELOPMENT_TEAM[sdk=watchos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "iTimer-Watch-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "iTimer Watch";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKWatchOnly = YES;

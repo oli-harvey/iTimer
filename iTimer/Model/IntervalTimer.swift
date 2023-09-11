@@ -85,6 +85,11 @@ class IntervalTimer: ObservableObject {
         intervalsElapsed += 1
         intervalsRemaining -= 1
     
+        #if os(watchOS)
+        WatchOShapticfeedbackgenerator.provideFeedback()
+        #else
+        IOSHapticFeedbackGenerator.provideFeedback()
+        #endif
         
         if intervalsRemaining > 0 {
             // Adjust the timerStarted by adding the time elapsed

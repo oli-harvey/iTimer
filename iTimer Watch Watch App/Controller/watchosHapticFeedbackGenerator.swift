@@ -1,10 +1,10 @@
 import WatchConnectivity
 import SwiftUI
 
-class watchOSHapticManager {
+class WatchOShapticfeedbackgenerator {
 
   static func provideFeedback() {
-    WKInterfaceDevice.current().play(.success)
+      WKInterfaceDevice.current().play(.success)
   }
 
 }

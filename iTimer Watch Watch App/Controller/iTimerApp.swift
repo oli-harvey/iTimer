@@ -1,6 +1,6 @@
 
 import SwiftUI
-//import HealthKit
+import WatchKit
 
 @main
 struct iTimerApp: App {
@@ -12,4 +12,6 @@ struct iTimerApp: App {
                 .environmentObject(timerConfigStorage)
         }
     }
+    
+    
 }
