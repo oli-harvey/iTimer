@@ -6,6 +6,7 @@ struct AddTimerView: View {
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
     @State private var totalIntervals: Int = 0
+    @State private var isSaveDisabled = true
     @EnvironmentObject var timerConfigStorage: TimerConfigStorage
     
     var body: some View {
@@ -72,8 +73,24 @@ struct AddTimerView: View {
                                 timerConfigStorage.addTimer(newTimerConfig)
                                 isPresented = false
                             }
+                            .disabled(isSaveDisabled)
                         }
                     }
+                }
+                .onChange(of: [hours, minutes, seconds]) { newValues in
+
+                  if newValues[0] == 0 &&
+                      newValues[1] == 0 &&
+                      newValues[2] == 0 {
+                      
+                    isSaveDisabled = true
+                    
+                  } else {
+                  
+                    isSaveDisabled = false
+                  
+                  }
+
                 }
             }
             .navigationBarTitle("Add Timer")
