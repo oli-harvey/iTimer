@@ -1,5 +1,4 @@
 
-
 import SwiftUI
 
 class IntervalTimer: ObservableObject {
@@ -19,22 +18,6 @@ class IntervalTimer: ObservableObject {
     private var timer: Timer?
     let intervalDuration: TimeInterval
     
-//    var timeRemainingFormatted: String {
-//        let hours = Int(timeRemaining) / 3600
-//        let minutes = (Int(timeRemaining) % 3600) / 60
-//        let seconds = Int(timeRemaining) % 60
-//        let milliseconds = Int((timeRemaining.truncatingRemainder(dividingBy: 1)) * 1000)
-//        var formattedTime = ""
-//        
-//        if hours == 0 {
-//            formattedTime = String(format: "%02d:%02d:%03d", minutes, seconds, milliseconds)
-//        } else {
-//            formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-//        }
-//        
-//        return formattedTime
-//    }
-    
     var progress: Double {
         let timeElapsed = intervalDuration - timeRemaining
         return max(0.0, min(1.0, timeElapsed / intervalDuration))
@@ -48,7 +31,6 @@ class IntervalTimer: ObservableObject {
         timeRemaining = intervalDuration
         intervalsElapsed = 0
         intervalsRemaining = totalIntervals
-        
     }
     
     deinit {

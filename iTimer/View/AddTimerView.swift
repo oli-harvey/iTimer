@@ -15,7 +15,7 @@ struct AddTimerView: View {
                 Section(header: Text("Duration")) {
                     HStack {
                         VStack {
-                            Text("Hours")
+                            Text("h")
                                 .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $hours) {
                                 ForEach(0..<24, id: \.self) { hour in
@@ -26,7 +26,7 @@ struct AddTimerView: View {
                         }
                         .labelsHidden() // Hide the default label
                         VStack {
-                            Text("Minutes")
+                            Text("m")
                                 .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $minutes) {
                                 ForEach(0..<60, id: \.self) { minute in
@@ -37,7 +37,7 @@ struct AddTimerView: View {
                         }
                         .labelsHidden() // Hide the default label
                         VStack {
-                            Text("Seconds")
+                            Text("s")
                                 .font(.system(size: Platform.textFontSize))
                             Picker("", selection: $seconds) {
                                 ForEach(0..<60, id: \.self) { second in
