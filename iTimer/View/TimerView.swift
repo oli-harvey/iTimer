@@ -9,10 +9,12 @@ struct TimerView: View {
     @Environment(\.presentationMode) var presentationMode
     let dotSize: CGFloat = 10
     private let buttonSize = ScreenSize.deviceWidth * 0.2
+    private let circleSize = ScreenSize.deviceWidth * 0.65
 
     var body: some View {
         ZStack {
             ProgressCircleView(timer: timer, isIntervalCompleted: $isIntervalCompleted)
+                .frame(width: circleSize, height: circleSize)
             VStack {
                 TimerNumericalView(timer: timer)
                 IntervalDotsView(timer: timer, isIntervalCompleted: $isIntervalCompleted, dotSize: dotSize)
@@ -67,14 +69,14 @@ struct ProgressCircleView: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.gray, lineWidth: 10)
+                .stroke(Color.gray, lineWidth: 8)
                 .scaleEffect(isIntervalCompleted ? 0.8 : 1.0)
                 .animation(.easeInOut(duration:0.3), value: isIntervalCompleted)
 //                .frame(width: 150, height: 150)
 
             Circle()
                 .trim(from: 0.0, to: CGFloat(timer.progress))
-                .stroke(Color.orange, style: StrokeStyle(lineWidth: 10, lineCap: .round))
+                .stroke(Color.orange, style: StrokeStyle(lineWidth: 8, lineCap: .round))
                 .scaleEffect(isIntervalCompleted ? 0.8 : 1.0)
                 .rotationEffect(.degrees(-90))
                 .animation(.easeInOut(duration:0.3), value: isIntervalCompleted)
@@ -87,15 +89,15 @@ struct TimerNumericalView: View {
 
     var body: some View {
         VStack {
-            HStack {
+//            HStack {
                 Text("\(timer.timeRemaining.humanReadable)")
                     .font(.system(size: Platform.textFontSize))
                     .bold()
                     .foregroundColor(.white)
-                Text("/ \(timer.intervalDuration.humanReadable)")
-                    .font(.system(size: Platform.textFontSize))
-                    .foregroundColor(.white)
-            }
+//                Text("/ \(timer.intervalDuration.humanReadable)")
+//                    .font(.system(size: Platform.textFontSize))
+//                    .foregroundColor(.white)
+//            }
 
             if timer.isCompleted {
                 Text("Completed")

@@ -9,13 +9,14 @@ class IntervalTimer: ObservableObject {
     @Published var isPaused = false
     @Published var isStopped = true
     @Published var isCompleted = false
+    
+    let extendedSessionProvider = ExtendedRuntimeSessionDelegate()
 
-    private var updateFreq = 0.01
+    private var updateFreq = 0.1
     private var timerStarted: Date? = nil
     private var pausedDate: Date?
     private var totalPausedTime: TimeInterval = 0
-    private var sessionDelegate: ExtendedRuntimeSessionDelegate = ExtendedRuntimeSessionDelegate()
-
+    
     private var timer: Timer?
     let intervalDuration: TimeInterval
 
@@ -55,16 +56,20 @@ class IntervalTimer: ObservableObject {
                     let intervalsCompleted = Int(floor(elapsedTime / self.intervalDuration))
                     let remainingTime = max(0, self.intervalDuration - elapsedTime)
                     self.timeRemaining = min(remainingTime, intervalDuration)
+                    
+//                    WKExtension.shared().
 
                     if intervalsCompleted > 0 {
                         for _ in 0..<intervalsCompleted {
                                self.intervalCompleted()
                            }
                     }
+                    
+                    
 
                 }
             }
-        sessionDelegate.startSession()
+        extendedSessionProvider.startSession()
     }
     func resetTimer() {
         intervalsElapsed = 0
@@ -81,7 +86,8 @@ class IntervalTimer: ObservableObject {
         timer = nil
         isStopped = true
         timeRemaining = intervalDuration
-        sessionDelegate.endSession()
+        extendedSessionProvider.endSession()
+        
     }
 
     private func intervalCompleted() {

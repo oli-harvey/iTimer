@@ -19,6 +19,7 @@
 		C90AB64A2AAEF6F800A34D03 /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6492AAEF6F800A34D03 /* iTimerApp.swift */; };
 		C90AB6502AAF8C3700A34D03 /* IntervalTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB64F2AAF8C3700A34D03 /* IntervalTimer.swift */; };
 		C90AB6522AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6512AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift */; };
+		C90AB6552AB0F8D500A34D03 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319992A88BB36007C653E /* TimerView.swift */; };
 		C96319982A88BB36007C653E /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319972A88BB36007C653E /* iTimerApp.swift */; };
 		C963199A2A88BB36007C653E /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319992A88BB36007C653E /* TimerView.swift */; };
 		C963199C2A88BB39007C653E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C963199B2A88BB39007C653E /* Assets.xcassets */; };
@@ -34,7 +35,6 @@
 		C9CC20BC2AACFA2A001C4CF5 /* iTimer Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9CC20C52AACFA2F001C4CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */; };
 		C9CC20C82AACFA2F001C4CF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C72AACFA2F001C4CF5 /* Preview Assets.xcassets */; };
-		C9CC20D02AACFB24001C4CF5 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319992A88BB36007C653E /* TimerView.swift */; };
 		C9CC20D22AACFB24001C4CF5 /* StructArrayStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AE2AA1DFA8007C653E /* StructArrayStorage.swift */; };
 		C9CC20D32AACFB24001C4CF5 /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
 		C9CC20D42AACFB24001C4CF5 /* TimerTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319AA2AA0822A007C653E /* TimerTextStyle.swift */; };
@@ -414,7 +414,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9CC20D02AACFB24001C4CF5 /* TimerView.swift in Sources */,
 				C9CC20D22AACFB24001C4CF5 /* StructArrayStorage.swift in Sources */,
 				C90AB63B2AAE332F00A34D03 /* HapticFeedbackGenerator.swift in Sources */,
 				C9CC21052AAD0E2E001C4CF5 /* Platform.swift in Sources */,
@@ -422,6 +421,7 @@
 				C9CC20D72AACFB24001C4CF5 /* TimerSelector.swift in Sources */,
 				C90AB6332AADBB1000A34D03 /* TimerListCell.swift in Sources */,
 				C9CC20DD2AACFC58001C4CF5 /* ScreenSize.swift in Sources */,
+				C90AB6552AB0F8D500A34D03 /* TimerView.swift in Sources */,
 				C9CC20D82AACFB24001C4CF5 /* TimerConfigStorage.swift in Sources */,
 				C9CC20D32AACFB24001C4CF5 /* AddTimerView.swift in Sources */,
 				C9CC20DA2AACFB24001C4CF5 /* TimerConfig.swift in Sources */,

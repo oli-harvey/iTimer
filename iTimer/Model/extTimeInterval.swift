@@ -4,16 +4,18 @@ extension TimeInterval {
 
     var humanReadable: String {
 
-        let seconds = Int(self)
-        let minutes = seconds / 60
-        let hours = minutes / 60
-
-        if hours > 0 {
-            return String(format: "%dh %dm", hours, minutes % 60)
-        } else if minutes > 0 {
-            return String(format: "%dm %ds", minutes, seconds % 60)
+        let hours = Int(self) / 3600
+        let minutes = (Int(self) % 3600) / 60
+        let seconds = Int(self) % 60
+//        let milliseconds = Int((self.truncatingRemainder(dividingBy: 1)) * 1000)
+        var formattedTime = ""
+        
+        if hours == 0 {
+            formattedTime = String(format: "%02d:%02d", minutes, seconds)
         } else {
-            return String(format: "%ds", seconds)
+            formattedTime = String(format: "%02d:%02d:%02d", hours, minutes, seconds)
         }
+        
+        return formattedTime
     }
 }

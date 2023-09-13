@@ -1,6 +1,13 @@
 import WatchConnectivity
 import WatchKit
 
+import SwiftUI
+
+class ExtendedRuntimeSessionDelegateProvider: ObservableObject {
+    @Published var delegate = ExtendedRuntimeSessionDelegate()
+}
+
+
 class ExtendedRuntimeSessionDelegate: NSObject, WKExtendedRuntimeSessionDelegate {
     var session: WKExtendedRuntimeSession?
     
@@ -8,6 +15,7 @@ class ExtendedRuntimeSessionDelegate: NSObject, WKExtendedRuntimeSessionDelegate
     
     func extendedRuntimeSession(_ extendedRuntimeSession: WKExtendedRuntimeSession, didInvalidateWith reason: WKExtendedRuntimeSessionInvalidationReason, error: Error?) {
         // Handle session invalidation
+        print(reason)
     }
     
     func extendedRuntimeSessionDidStart(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
@@ -16,16 +24,18 @@ class ExtendedRuntimeSessionDelegate: NSObject, WKExtendedRuntimeSessionDelegate
     
     func extendedRuntimeSessionWillExpire(_ extendedRuntimeSession: WKExtendedRuntimeSession) {
         // Handle session expiration
+        print(session)
+        endSession()
     }
     
     // MARK: - Session Control
     
     func startSession() {
-        if session == nil {
-            session = WKExtendedRuntimeSession()
-            session?.delegate = self
-            session?.start()
-        }
+        print("Starting extended runtime session")
+        endSession()
+        session = WKExtendedRuntimeSession()
+        session?.delegate = self
+        session?.start()
     }
     
     func endSession() {
