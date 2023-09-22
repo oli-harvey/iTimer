@@ -156,7 +156,7 @@ struct IntervalDotsView: View {
         let numberOfRows = (totalIntervals + maxDotsPerRow - 1) / maxDotsPerRow
 
         let intervalsToDisplay = min(totalIntervals, maxDotsToShowText)
-        let extraDotsCount = totalIntervals - maxDotsToShowText
+//        let extraDotsCount = totalIntervals - maxDotsToShowText
 
         VStack {
             if totalIntervals > maxDotsToShowText {
