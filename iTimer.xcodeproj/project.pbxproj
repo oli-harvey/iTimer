@@ -23,7 +23,7 @@
 		C90AB65F2ABA176000A34D03 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90AB65E2ABA176000A34D03 /* WidgetKit.framework */; };
 		C90AB6612ABA176000A34D03 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C90AB6602ABA176000A34D03 /* SwiftUI.framework */; };
 		C90AB6642ABA176000A34D03 /* iTimer_WidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6632ABA176000A34D03 /* iTimer_WidgetBundle.swift */; };
-		C90AB6662ABA176000A34D03 /* iTimer_Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6652ABA176000A34D03 /* iTimer_Widget.swift */; };
+		C90AB6662ABA176000A34D03 /* iTimerComplicationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AB6652ABA176000A34D03 /* iTimerComplicationView.swift */; };
 		C90AB6682ABA176400A34D03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C90AB6672ABA176400A34D03 /* Assets.xcassets */; };
 		C90AB66C2ABA176400A34D03 /* iTimer WidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C90AB65D2ABA175F00A34D03 /* iTimer WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C96319982A88BB36007C653E /* iTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319972A88BB36007C653E /* iTimerApp.swift */; };
@@ -38,6 +38,8 @@
 		C96319B32AA3B05F007C653E /* AddTimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B22AA3B05E007C653E /* AddTimerView.swift */; };
 		C96319B52AA3B594007C653E /* TimerConfigStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319B42AA3B594007C653E /* TimerConfigStorage.swift */; };
 		C96319BB2AA48CE5007C653E /* TimerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96319BA2AA48CE5007C653E /* TimerListCell.swift */; };
+		C99A69272ABEDF5E001EFEB9 /* TimerComplicationWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A69232ABEDE87001EFEB9 /* TimerComplicationWidget.swift */; };
+		C99A69282ABEDF72001EFEB9 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99A69252ABEDEC0001EFEB9 /* Provider.swift */; };
 		C9CC20BC2AACFA2A001C4CF5 /* iTimer Watch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C9CC20C52AACFA2F001C4CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */; };
 		C9CC20C82AACFA2F001C4CF5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9CC20C72AACFA2F001C4CF5 /* Preview Assets.xcassets */; };
@@ -113,7 +115,7 @@
 		C90AB65E2ABA176000A34D03 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		C90AB6602ABA176000A34D03 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		C90AB6632ABA176000A34D03 /* iTimer_WidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimer_WidgetBundle.swift; sourceTree = "<group>"; };
-		C90AB6652ABA176000A34D03 /* iTimer_Widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimer_Widget.swift; sourceTree = "<group>"; };
+		C90AB6652ABA176000A34D03 /* iTimerComplicationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimerComplicationView.swift; sourceTree = "<group>"; };
 		C90AB6672ABA176400A34D03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C90AB6692ABA176400A34D03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C96319942A88BB36007C653E /* iTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,8 @@
 		C96319B22AA3B05E007C653E /* AddTimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTimerView.swift; sourceTree = "<group>"; };
 		C96319B42AA3B594007C653E /* TimerConfigStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerConfigStorage.swift; sourceTree = "<group>"; };
 		C96319BA2AA48CE5007C653E /* TimerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListCell.swift; sourceTree = "<group>"; };
+		C99A69232ABEDE87001EFEB9 /* TimerComplicationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComplicationWidget.swift; sourceTree = "<group>"; };
+		C99A69252ABEDEC0001EFEB9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		C9CC20B62AACFA2A001C4CF5 /* iTimer Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,9 +213,11 @@
 			isa = PBXGroup;
 			children = (
 				C90AB6632ABA176000A34D03 /* iTimer_WidgetBundle.swift */,
-				C90AB6652ABA176000A34D03 /* iTimer_Widget.swift */,
+				C90AB6652ABA176000A34D03 /* iTimerComplicationView.swift */,
+				C99A69232ABEDE87001EFEB9 /* TimerComplicationWidget.swift */,
 				C90AB6672ABA176400A34D03 /* Assets.xcassets */,
 				C90AB6692ABA176400A34D03 /* Info.plist */,
+				C99A69252ABEDEC0001EFEB9 /* Provider.swift */,
 			);
 			path = "iTimer Widget";
 			sourceTree = "<group>";
@@ -477,8 +483,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C99A69282ABEDF72001EFEB9 /* Provider.swift in Sources */,
 				C90AB6642ABA176000A34D03 /* iTimer_WidgetBundle.swift in Sources */,
-				C90AB6662ABA176000A34D03 /* iTimer_Widget.swift in Sources */,
+				C90AB6662ABA176000A34D03 /* iTimerComplicationView.swift in Sources */,
+				C99A69272ABEDF5E001EFEB9 /* TimerComplicationWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

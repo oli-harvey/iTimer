@@ -11,6 +11,6 @@ import SwiftUI
 @main
 struct iTimer_WidgetBundle: WidgetBundle {
     var body: some Widget {
-        iTimer_Widget()
+        TimerComplication()
     }
 }
