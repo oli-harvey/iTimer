@@ -108,7 +108,7 @@
 		C90AB6412AAE37E200A34D03 /* IOSHapticFeedbackGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSHapticFeedbackGenerator.swift; sourceTree = "<group>"; };
 		C90AB6442AAE381100A34D03 /* WatchOShapticfeedbackgenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchOShapticfeedbackgenerator.swift; sourceTree = "<group>"; };
 		C90AB6492AAEF6F800A34D03 /* iTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTimerApp.swift; sourceTree = "<group>"; };
-		C90AB64B2AAF0F1C00A34D03 /* iTimer-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "iTimer-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		C90AB64B2AAF0F1C00A34D03 /* iTimer-Watch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTimer-Watch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		C90AB64F2AAF8C3700A34D03 /* IntervalTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalTimer.swift; sourceTree = "<group>"; };
 		C90AB6512AAF8F1F00A34D03 /* ExtendedRuntimeSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendedRuntimeSessionDelegate.swift; sourceTree = "<group>"; };
 		C90AB65D2ABA175F00A34D03 /* iTimer WidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "iTimer WidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +133,7 @@
 		C96319BA2AA48CE5007C653E /* TimerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerListCell.swift; sourceTree = "<group>"; };
 		C99A69232ABEDE87001EFEB9 /* TimerComplicationWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerComplicationWidget.swift; sourceTree = "<group>"; };
 		C99A69252ABEDEC0001EFEB9 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		C99A69292AC026C5001EFEB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9CC20B62AACFA2A001C4CF5 /* iTimer Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CC20BB2AACFA2A001C4CF5 /* iTimer Watch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iTimer Watch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CC20C42AACFA2F001C4CF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +248,7 @@
 		C96319962A88BB36007C653E /* iTimer */ = {
 			isa = PBXGroup;
 			children = (
+				C99A69292AC026C5001EFEB9 /* Info.plist */,
 				C96319A92A88BB84007C653E /* Controller */,
 				C96319A82A88BB77007C653E /* View */,
 				C96319A72A88BB65007C653E /* Model */,
@@ -735,6 +737,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -769,6 +772,7 @@
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = KQFV358W5W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = iTimer/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

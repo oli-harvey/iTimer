@@ -2,7 +2,7 @@ import SwiftUI
 
 struct TimerComplicationView: View {
     var body: some View {
-        Image(systemName: "timer")
+        Image("Timer")
             .font(.system(size: 20))
     }
 }
