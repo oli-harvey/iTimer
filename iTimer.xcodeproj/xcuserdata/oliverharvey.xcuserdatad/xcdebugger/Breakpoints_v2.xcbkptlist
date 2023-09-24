@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "5002BB19-10F7-4C04-9E36-18C04EDBC265"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D3587E32-9663-456F-AC2E-53755088D549"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iTimer/Controller/iTimerApp.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "iTimerApp"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "D3587E32-9663-456F-AC2E-53755088D549 - c00b73331d1c7cd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTimer_Watch_Watch_App.iTimerApp.body.getter : some"
+                  moduleName = "iTimer Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliverharvey/Documents/xCodeProjects/iTimer/iTimer/Controller/iTimerApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "170">
+               </Location>
+               <Location
+                  uuid = "D3587E32-9663-456F-AC2E-53755088D549 - c00b73331d1c7cd3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTimer_Watch_Watch_App.iTimerApp.body.getter : some"
+                  moduleName = "iTimer Watch Watch App"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliverharvey/Documents/xCodeProjects/iTimer/iTimer/Controller/iTimerApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "156">
+               </Location>
+               <Location
+                  uuid = "D3587E32-9663-456F-AC2E-53755088D549 - 495ea06de5ade058"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iTimer.iTimerApp.body.getter : some"
+                  moduleName = "iTimer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/oliverharvey/Documents/xCodeProjects/iTimer/iTimer/Controller/iTimerApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "15"
+                  endingLineNumber = "15"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
